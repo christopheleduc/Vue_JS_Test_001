@@ -21,6 +21,8 @@
             <h1>{{ message }}</h1>
     </div>
 
+    <br>
+
     <div id="app-2">
         <span v-bind:title="message"> <!-- "v-" préfixe une directive! "v-bind" est donc un attribut spécial réactif au DOM après rendu. -->
           Passez votre souris sur moi pendant quelques secondes
@@ -28,11 +30,13 @@
         </span>
     </div>
 
+    <br>
+
     <!-- Capturer un texte entré dans un champ de saisie : -->
     <div id="app-3">
     <!--   <label for="name">Name:</label> -->
         <input type="text" v-model="value_test" />
-        <p>{{ value_test }}</p>
+        <h1><p>{{ value_test }}</p></h1>
     </div>
 
     <!-- Ajouter / Enlever une classe sur un élément : -->
@@ -46,9 +50,9 @@
         <button v-on:click="show = !show">
             Afficher le titre
         </button>
-        <h1 v-if="show">Ma première page en Vue.js</h1>
+        <h2 v-if="show">Ma première page en Vue.js</h2>
     </div>
-    
+
 </body>
 <!-- <script src="script.js"></script> -->
 <script src="vue.js"></script>
