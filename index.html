@@ -53,6 +53,20 @@
         <h2 v-if="show">Ma première page en Vue.js</h2>
     </div>
 
+    <!-- permuter la présence d’un élément : -->
+    <div id="app-6">
+        <p v-if="seen">Maintenant vous me voyez</p>
+    </div>
+
+    <!-- liste d’éléments en provenance d’un tableau de données -->
+    <div id="app-7">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+    </div>
+
 </body>
 <!-- <script src="script.js"></script> -->
 <script src="vue.js"></script>
