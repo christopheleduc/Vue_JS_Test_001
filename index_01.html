@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- development version, includes helpful console warnings -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="node_modules\vue\dist\vue.js"></script>
+    <!-- production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script> -->
+
+    <!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+</head>
+
+<body>
+
+    <!-- Capturer un texte entré dans un champ de saisie : -->
+    <div id="app-3">
+        <div>
+            <input type="text" v-model="value_test" />
+            <h1><p>{{ value_test }}</p></h1>
+        </div>
+        <div>
+            <input type="text" v-model="value_test_01" />
+            <h2><p>{{ value_test_01 }}</p></h2>
+        </div>
+        <!-- Affiche du texte avec un bouton : -->
+        <div>
+            <input type="text" v-model="value_test_02" />
+            <button @click="active = !active">Afficher le texte</button>
+            <p v-if = "active">{{ value_test_02 }}</p>
+        </div>
+        <!-- Ajouter / Enlever une classe sur un élément : -->
+        <!-- <div>
+            <button @click="active = !active">Changer la couleur</button>
+            <p :class="{ red: active }">{{ value_test_01 }}</p>
+            <p :class="{ red: active }">{{ value_test_02 }}</p>
+        </div> -->
+        <div>
+            <input type="checkbox" v-model="checkedColor">
+            <p v-bind:class="{ red: checkedColor }" >{{ value_test_02 }}</p>
+        </div>
+    </div>
+
+
+
+    
+    <!-- Afficher / Cacher un élément au clic sur un bouton : -->
+    <div id="app-5">
+        <button v-on:click="show = !show">
+            Afficher le titre
+        </button>
+        <h2 v-if="show">Ma première page en Vue.js</h2>
+    </div>
+
+    <!-- permuter la présence d’un élément : -->
+    <div id="app-6">
+        <p v-if="seen">Maintenant vous me voyez</p>
+    </div>
+
+    <!-- liste d’éléments en provenance d’un tableau de données -->
+    <div id="app-7">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+    </div>
+
+</body>
+<!-- <script src="script.js"></script> -->
+<script src="vue_01.js"></script>
+</html>
